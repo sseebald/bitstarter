@@ -8,7 +8,7 @@ var buffer = new Buffer(16);
 
 //buffer.write(fs.readFileSync('/etc/passwd'),"utf-8");
 
-buffer.write("Test","utf-8");
+buffer.write("Test");
 
 //var buffer = new Buffer(fs.readFile('/home/ubuntu/bitstarter/index.html'),"utf-8");
 
