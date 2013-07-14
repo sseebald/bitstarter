@@ -10,14 +10,12 @@ var app = express.createServer(express.logger());
 
 //buffer.write("Test");
 
-//var buffer = new Buffer(fs.readFile('/home/ubuntu/bitstarter/index.html'),"utf-8");
+var buffer = new Buffer(fs.readFileSync('/home/ubuntu/bitstarter/index.html');
 
-fs.readFileSync('/home/ubuntu/bitstarter/index.html')
-console.log(data);
+//var test = fs.readFileSync('/home/ubuntu/bitstarter/index.html');
 
-
-//app.get('/', function(request, response) {
-//  response.send("Test");});
+app.get('/', function(request, response) {
+  response.send("Test");});
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
