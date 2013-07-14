@@ -4,7 +4,7 @@ var app = express.createServer(express.logger());
 
 var buffer = new Buffer(16);
 
-fs.readFileSync('/etc/passwd');
+//fs.readFileSync('/etc/passwd');
 
 //buffer.write(fs.readFileSync('/etc/passwd'),"utf-8");
 
