@@ -2,17 +2,9 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
-//var buffer = new Buffer(fs.readFileSync('/home/ubuntu/bitstarter/index.html');
-
-//fs.readFileSync('/etc/passwd');
-
-//buffer.write(fs.readFileSync('/etc/passwd'),"utf-8");
-
-//buffer.write("Test");
-
-var buffer = new Buffer(fs.readFileSync('/home/ubuntu/bitstarter/index.html');
-
-//var test = fs.readFileSync('/home/ubuntu/bitstarter/index.html');
+//var buffer = new Buffer(fs.readFileSync('/home/ubuntu/bitstarter/index.html', function (err, data) {
+//  if (err) throw err; 
+//  console.log(data)}));
 
 app.get('/', function(request, response) {
   response.send("Test");});
