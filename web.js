@@ -6,7 +6,7 @@ var app = express.createServer(express.logger());
 
 var buffer = new Buffer(255);
 
-buffer.write("Fuck this shit");
+var test = fs.readFileSync('/home/ubuntu/bitstarter/index.html');
 
 //buffer.write(fs.readFileSync('/home/ubuntu/bitstarter/index.html'));
 
@@ -15,7 +15,7 @@ buffer.write("Fuck this shit");
 //buffer.toString();
 
 app.get('/', function(request, response) {
-  response.send(buffer.toString());
+  response.send(test);
 });
 
 var port = process.env.PORT || 5000;
