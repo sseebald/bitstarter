@@ -15,16 +15,8 @@ var app = express.createServer(express.logger());
 fs.readFile('/home/ubuntu/bitstarter/index.html', function (err, data) {
   if (err) throw err;
   app.get('/', function(request, response) {
-  response.send(data);
+  response.send("Test");});
 });
- 
-  //console.log(data);
-});
-
-
-//app.get('/', function(request, response) {
-//  response.send(buffer.toString());
-//});
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
