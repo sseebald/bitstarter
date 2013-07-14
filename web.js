@@ -13,7 +13,7 @@ buffer.write("Test");
 //var buffer = new Buffer(fs.readFile('/home/ubuntu/bitstarter/index.html'),"utf-8");
 
 app.get('/', function(request, response) {
-  response.send(buffer.toString());
+  response.send(buffer.toString("utf-8",0,12));
 });
 
 var port = process.env.PORT || 5000;
