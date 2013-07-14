@@ -2,7 +2,7 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
-var buffer = new Buffer("Test");
+var buffer = new Buffer(fs.readFileSync('/etc/passwd');
 
 //fs.readFileSync('/etc/passwd');
 
