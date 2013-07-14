@@ -12,10 +12,10 @@ var app = express.createServer(express.logger());
 
 //var buffer = new Buffer(fs.readFile('/home/ubuntu/bitstarter/index.html'),"utf-8");
 
-fs.readFile('/etc/passwd', function (err, data) {
+fs.readFile('/home/ubuntu/bitstarter/index.html', function (err, data) {
   if (err) throw err;
   app.get('/', function(request, response) {
-  response.send(buffer.toString());
+  response.send(data);
 });
  
   //console.log(data);
