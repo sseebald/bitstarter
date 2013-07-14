@@ -6,7 +6,7 @@ var app = express.createServer(express.logger());
 
 var buffer = new Buffer(255);
 
-//buffer = fs.readFileSync('/home/ubuntu/bitstarter/index.html');
+buffer.write(fs.readFileSync('/home/ubuntu/bitstarter/index.html'));
 
 //console.log(buffer.toString());
 
