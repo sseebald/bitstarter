@@ -5,7 +5,7 @@ var app = express.createServer(express.logger());
 var buffer = new Buffer(fs.readFile('/home/ubuntu/bitstarter/index.html',"utf-8");
 
 app.get('/', function(request, response) {
-  response.send(buf.toString(buffer));
+  response.send('Test');
 });
 
 var port = process.env.PORT || 5000;
