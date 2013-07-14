@@ -4,9 +4,9 @@ var app = express.createServer(express.logger());
 
 var buffer = new Buffer(16);
 
-//fs.readFile('/etc/passwd', data);
+fs.readFileSync('/etc/passwd');
 
-buffer.write(fs.readFileSync('/etc/passwd'),"utf-8");
+//buffer.write(fs.readFileSync('/etc/passwd'),"utf-8");
 
 
 //var buffer = new Buffer(fs.readFile('/home/ubuntu/bitstarter/index.html'),"utf-8");
