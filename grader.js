@@ -27,7 +27,6 @@ var cheerio = require('cheerio');
 var restler = require('restler');
 var HTMLFILE_DEFAULT = "index.html";
 var CHECKSFILE_DEFAULT = "checks.json";
-//var URL_DEFAULT = "https://github.com/sseebald/bitstarter/blob/fd0dc0e29c8cb93f072d8c0d58544b4a3f2afe9a/index.html";
 
 var assertFileExists = function(infile) {
     var instr = infile.toString();
@@ -43,15 +42,18 @@ var loadChecks = function(checksfile) {
 };
 
 var checkHtmlFile = function(htmlfile, checksfile, type) {
-    console.log(type);
     if (type == "url") {
 	$ = cheerio.load(htmlfile);
+//	console.log($);
     } else {
 	$ = cheerio.load(fs.readFileSync(htmlfile));
+//	console.log($);
 	}
     var checks = loadChecks(checksfile).sort();
     var out = {};
     for(var ii in checks) {
+//	console.log($);
+//	console.log($(checks[ii]));
         var present = $(checks[ii]).length > 0;
         out[checks[ii]] = present;
     }
@@ -72,7 +74,8 @@ if(require.main == module) {
 	.parse(process.argv);
     if (program.url) {
 	restler.get(program.url).on('complete',function(result) {
-            var checkJson = checkHtmlFile(result,program.checks, "url");
+//	    console.log(result);
+	    var checkJson = checkHtmlFile(result, program.checks, "url");
 	    var outJson = JSON.stringify(checkJson, null, 4);
 	    console.log(outJson);
 	});
