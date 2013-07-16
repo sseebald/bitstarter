@@ -44,16 +44,12 @@ var loadChecks = function(checksfile) {
 var checkHtmlFile = function(htmlfile, checksfile, type) {
     if (type == "url") {
 	$ = cheerio.load(htmlfile);
-//	console.log($);
     } else {
 	$ = cheerio.load(fs.readFileSync(htmlfile));
-//	console.log($);
 	}
     var checks = loadChecks(checksfile).sort();
     var out = {};
     for(var ii in checks) {
-//	console.log($);
-//	console.log($(checks[ii]));
         var present = $(checks[ii]).length > 0;
         out[checks[ii]] = present;
     }
@@ -74,7 +70,6 @@ if(require.main == module) {
 	.parse(process.argv);
     if (program.url) {
 	restler.get(program.url).on('complete',function(result) {
-//	    console.log(result);
 	    var checkJson = checkHtmlFile(result, program.checks, "url");
 	    var outJson = JSON.stringify(checkJson, null, 4);
 	    console.log(outJson);
